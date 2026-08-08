@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+/* =========================================
+   1. TOKENS GLOBAIS: TEMA CLARO (Default)
+   ========================================= */
+:root {
+  /* Fundo da Aplicação e Elementos Visuais */
+  --color-bg-app: #f9fafb;
+  --color-bg-surface: #ffffff;
+
+  /* Textos */
+  --color-text-main: #030712;
+  --color-text-muted: #4b5563;
+
+  /* Cores Primárias */
+  --color-brand-base: #2563eb;
+  --color-brand-hover: #1d4ed8;
+
+  /* Linhas e Bordas */
+  --color-border-base: #e5e7eb;
+}
+
+/* =========================================
+   2. TOKENS INVERSOS: TEMA ESCURO
+   ========================================= */
+[data-mantine-color-scheme='dark'] {
+  /* Fundo da Aplicação e Elementos Visuais */
+  --color-bg-app: #030712;
+  --color-bg-surface: #111827;
+
+  /* Textos */
+  --color-text-main: #f9fafb;
+  --color-text-muted: #9ca3af;
+
+  /* Cores Primárias */
+  --color-brand-base: #3b82f6;
+  --color-brand-hover: #60a5fa;
+
+  /* Linhas e Bordas */
+  --color-border-base: #374151;
+}
+
+/* =========================================
+   3. INJEÇÃO NO MOTOR DO TAILWIND v4
+   ========================================= */
+@theme {
+  --color-app: var(--color-bg-app);
+  --color-surface: var(--color-bg-surface);
+
+  --color-content: var(--color-text-main);
+  --color-content-muted: var(--color-text-muted);
+
+  --color-brand: var(--color-brand-base);
+  --color-brand-hover: var(--color-brand-hover);
+
+  --color-line: var(--color-border-base);
+}
+
+/* =========================================
+   4. RESET GLOBAL E ESTILOS BASE
+   ========================================= */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-app);
+  color: var(--color-text-main);
+}
+
+/* =========================================
+   5. UTILITÁRIOS CUSTOMIZADOS (Tailwind v4)
+   ========================================= */
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 1440px;
+
+  /* Mobile (Padrão inicial) */
+  padding: 1rem;
+
+  /* Tablet (A partir de 768px) */
+  @variant md {
+    padding-inline: 2rem;
+  }
+
+  /* Desktop (A partir de 1024px) */
+  @variant lg {
+    padding-inline: 4rem;
+  }
+}
